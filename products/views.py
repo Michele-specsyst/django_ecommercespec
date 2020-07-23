@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render
+=======
+from django.views.generic import ListView,DetailView
+from django.shortcuts import render, get_object_or_404
+>>>>>>> 1d23f35148ef7c5465d75f970b4fffa81f8e9948
 
 from .models import Product
 
@@ -22,7 +27,14 @@ class ProductDetailView(DetailView):
     queryset = Product.objects.all()
     template_name = "products/detail.html"
 
+<<<<<<< HEAD
     # def get_context_data(self, *args, **kwargs):
     # context = super(ProductDetailView, self).get_context_data(*args, **kwargs)
     # print(context)
     # return context
+=======
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProductDetailView, self).get_context_data(*args, **kwargs)
+        print(context)
+        return context
+>>>>>>> 1d23f35148ef7c5465d75f970b4fffa81f8e9948
